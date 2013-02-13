@@ -14,7 +14,12 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  if a + b <= c or a + c <= b or b + c <= a
+    raise TriangleError.new("Error!")
+  end
+
+  s = [a, b, c].uniq.size
+  s == 1 ? :equilateral : s == 2 ? :isosceles : :scalene
 end
 
 # Error class used in part 2.  No need to change this code.
